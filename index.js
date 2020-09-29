@@ -1,8 +1,10 @@
 const { Client } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 
-const coronaJatim = require("./templates/coronaJatim.js");
+const quotes = require("./templates/quotes.js");
 const ping = require("./templates/test-ping.js");
+const Brainly = require("./templates/brainly.js");
+const MakeQ = require("./templates/gen-quote.js");
 
 const client = new Client();
 
@@ -17,7 +19,9 @@ client.on('ready', () => {
 
 client.on('message', async(msg) => {
     ping(msg);
-    coronaJatim(msg);
+    quotes(msg);
+    Brainly(msg);
+    MakeQ(client, msg);
 });
 
 client.initialize();
