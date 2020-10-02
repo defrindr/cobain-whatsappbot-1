@@ -1,15 +1,12 @@
 const request = require('request-promise');
-const { MessageMedia, Client } = require('whatsapp-web.js');
-const fs = require('fs');
+const { MessageMedia } = require('whatsapp-web.js');
 
 
 const genQuote = async(client, msg) => {
 
     if(msg.body.includes('!makeq')){
-        let sources = msg.body.replace('!makeq ','');
+        let sources = msg.body.replace('!makeq','');
         let text = "", author = "";
-
-        let fileName = [...Array(20)].map(() => (~~(Math.random() * 36)).toString(36)).join('')+".png";
 
         if(sources.split("|").length > 1){
             [text, author] = sources.split("|");

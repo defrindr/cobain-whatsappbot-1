@@ -1,3 +1,7 @@
+/**
+ * Deprecated
+ */
+
 let fetch = require('request-promise');
 
 let coronaJatim = (zone = null) => {

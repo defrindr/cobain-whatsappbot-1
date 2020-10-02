@@ -5,6 +5,7 @@ const quotes = require("./templates/quotes.js");
 const ping = require("./templates/test-ping.js");
 const Brainly = require("./templates/brainly.js");
 const MakeQ = require("./templates/gen-quote.js");
+const Latex = require("./templates/latex.js");
 
 const client = new Client();
 
@@ -22,6 +23,7 @@ client.on('message', async(msg) => {
     quotes(msg);
     Brainly(msg);
     MakeQ(client, msg);
+    Latex(client, msg);
 });
 
 client.initialize();

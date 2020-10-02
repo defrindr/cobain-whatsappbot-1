@@ -1,2 +1,5 @@
 node_modules/
 vendor/
+assets/image/
+assets/image.png
+/requests/latex/image
